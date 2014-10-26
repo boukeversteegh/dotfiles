@@ -83,9 +83,19 @@ On_IPurple="\[\033[10;95m\]"  # Purple
 On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 
+#PS1="\e[30;47m\u@\h\$\e[48;5;235m \e[31;1m\w\033[0m$Green\$(__git_ps1)\033[37;0m\e[0m\n"
+#PS1="$On_Black$UBlue\u@\h\e \t $Color_Off$On_Black$UCyan\w$Color_Off$(__git_ps1)\n"
+#PROMPT_COMMAND='printf %b%${COLUMNS}b%b "\033[40;31m¶\033[0m" "\r" "\e[K"'
+
+cc() {
+  echo -en "\E[6n"
+  read -sdR CURPOS
+  CURPOS=${CURPOS#*[}
+  echo -n $CURPOS
+}
+
 PS1="$Blue$On_Black\u@\h\e $Blue$On_Black\t $Color_Off$UCyan$On_Black\w$Color_Off$ICyan$On_Black\$(__git_ps1)$Color_Off\n$ICyan"
 trap "tput sgr0" DEBUG
 
 export LC_ALL="en_US.UTF-8"
 
-(which npm > /dev/null) && . <(npm completion)
