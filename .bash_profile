@@ -1,5 +1,7 @@
 HISTCONTROL=ignoredups
-source .git-prompt.sh
+dotfiles="${BASH_SOURCE%/*}"
+
+source $dotfiles/.git-prompt.sh
 PS1_gitedits() {
 	return;
 	if [ -d .git ]; then
