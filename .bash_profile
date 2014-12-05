@@ -2,6 +2,7 @@ HISTCONTROL=ignoredups
 dotfiles="${BASH_SOURCE%/*}"
 
 source $dotfiles/.git-prompt.sh
+PATH="$PATH:$dotfiles/bin"
 PS1_gitedits() {
 	return;
 	if [ -d .git ]; then
