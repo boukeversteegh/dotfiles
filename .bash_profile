@@ -3,6 +3,8 @@ dotfiles="${BASH_SOURCE%/*}"
 
 source $dotfiles/.git-prompt.sh
 PATH="$PATH:$dotfiles/bin"
+alias gh=". git-home"
+
 PS1_gitedits() {
 	return;
 	if [ -d .git ]; then
@@ -100,3 +102,4 @@ trap "tput sgr0" DEBUG
 
 export LC_ALL="en_US.UTF-8"
 
+#(which npm > /dev/null) && . <(npm completion)
