@@ -23,7 +23,9 @@ cc() {
 }
 
 PS1="$Blue$On_Black\u@\h\e $Blue$On_Black\t $Color_Off$UCyan$On_Black\w$Color_Off$ICyan$On_Black\$(__git_ps1)$Color_Off\n$ICyan"
-trap "tput sgr0" DEBUG
+
+# This breaks vagrant debian
+# trap "tput sgr0" DEBUG
 
 export LC_ALL="en_US.UTF-8"
 
