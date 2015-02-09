@@ -2,6 +2,8 @@ HISTCONTROL=ignoredups
 dotfiles="${BASH_SOURCE%/*}"
 
 source $dotfiles/.git-prompt.sh
+source $dotfiles/.git-completion.bash
+
 PATH="$PATH:$dotfiles/bin"
 alias gh=". git-home"
 
