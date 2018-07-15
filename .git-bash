@@ -1,1 +1,9 @@
-.git-bash
+PS1_gitedits() {
+	return;
+	if [ -d .git ]; then
+		echo "";
+		git status -s 2> /dev/null | column | awk '{print "\033[32;48;5;235m" $0 "\033[0m"}' | column
+	fi;
+}
+
+alias gh=". git-home"

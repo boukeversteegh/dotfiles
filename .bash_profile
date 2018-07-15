@@ -17,6 +17,7 @@ else
 fi
 
 alias ll="ls -lah"
+alias dc="docker-compose"
 
 source $dotfiles/.bash-colors
 
